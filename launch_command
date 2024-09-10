@@ -1,0 +1,1 @@
+docker run -it --rm -v  C:\Users\david\Documents\Research\racer\catkin_ws:/root/catkin_ws --network racer_default --env ROS_MASTER_URI=http://roscore:11311 --name ros hetracer:latest

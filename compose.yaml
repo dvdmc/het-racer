@@ -1,0 +1,14 @@
+services:
+  roscore:
+    image: ros:noetic-ros-core
+    command: roscore
+    environment:
+      - ROS_MASTER_URI=http://roscore:11311
+  
+  foxglove-bridge:
+    image: hetracer:latest
+    ports:
+      - 8765:8765
+    environment:
+      - ROS_MASTER_URI=http://roscore:11311
+    command: /root/waitOn.sh /rosout "roslaunch foxglove_bridge foxglove_bridge.launch"
