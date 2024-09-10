@@ -10,6 +10,11 @@ RUN apt-get install -y \
     libelf-dev \
     libdw-dev 
 
+wget http://akira.ruc.dk/~keld/research/LKH-3/LKH-3.0.6.tgz
+tar xvfz LKH-3.0.6.tgz
+cd LKH-3.0.6
+make
+sudo cp LKH /usr/local/bin
 
 # Install NLopt for traj optimization in RACER !Exists in Noetic!
 # RUN wget https://github.com/stevengj/nlopt/archive/v2.7.1.tar.gz
